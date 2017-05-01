@@ -1,4 +1,4 @@
-# Humans and Superhumans
+# Human and Superhumans
 
 ## Objectives
 
