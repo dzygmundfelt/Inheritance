@@ -32,6 +32,22 @@ public class InventoryTest {
     }
 
     @Test
+    public void numberOfProductsWithRemovalsTest() {
+        //Given
+        Inventory inventory = new Inventory();
+        inventory.createNewProduct(10.00);
+        inventory.createNewProduct(14.55);
+        inventory.createNewProduct(8000.00);
+        inventory.createNewProduct(400.00);
+        inventory.removeProduct(2);
+        int expected = 3;
+        //When
+        int actual = inventory.numberOfProducts();
+        //Then
+        Assert.assertEquals("There should be three products", expected, actual);
+    }
+
+    @Test
     public void totalInventoryValueTest() {
         //Given
         Inventory inventory = new Inventory();

@@ -6,10 +6,11 @@ import java.util.*;
 
 public class Inventory {
     private int nextID = 0;
+    private int removed = 0;
     private ArrayList<Product> productList = new ArrayList<Product>();
 
     public int numberOfProducts() {
-        return productList.size();
+        return productList.size() - removed;
     }
 
     public double totalInventoryValue() {
@@ -54,6 +55,12 @@ public class Inventory {
             inventoryString += p.printProduct() + "\n";
         }
         return inventoryString;
+    }
+
+    public void removeProduct(int productID) {
+        changePrice(productID, 0);
+        changeQuantity(productID, 0);
+        removed++;
     }
 
 }
