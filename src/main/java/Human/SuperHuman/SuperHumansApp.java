@@ -1,7 +1,9 @@
+package Human.SuperHuman;
+
 /**
  * Created by danzygmund-felt on 5/1/17.
  */
-public class Main {
+public class SuperHumansApp {
 
     public static void main(String[] args) {
 

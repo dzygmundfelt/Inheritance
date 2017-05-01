@@ -1,9 +1,11 @@
+package Human.SuperHuman;
+
 /**
  * Created by danzygmund-felt on 5/1/17.
  *
- * Create a 'Human' class that has fields for: name, age, gender, occupation, and address.
+ * Create a 'Human.SuperHuman.Human' class that has fields for: name, age, gender, occupation, and address.
  * Also create methods for retrieving and outputting this data to screen.Then create a
- * SuperHuman class that subclasses the first with fields for good or bad, hero name, super
+ * Human.SuperHuman.SuperHuman class that subclasses the first with fields for good or bad, hero name, super
  * ability. As before, create methods for retrieving field data and printing to screen.
  */
 

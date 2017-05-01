@@ -1,6 +1,6 @@
 # Class Manager
 
-## Product Inventory Project 
+## Class.Manager.Product Class.Manager.Inventory Project 
 
 ## Objectives
 
