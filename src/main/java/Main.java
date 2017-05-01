@@ -24,6 +24,29 @@ public class Main {
 
         System.out.println(clarkKent.toString() + "\n" + superMan.toString());
 
+        SuperHuman theIncredibleHulk = new SuperHuman();
+        theIncredibleHulk.setName("Bruce Banner");
+        theIncredibleHulk.setAge(35);
+        theIncredibleHulk.setGender("Male");
+        theIncredibleHulk.setOccupation("Careless physicist");
+        theIncredibleHulk.setAddress("He wakes up in a new place every morning");
+        theIncredibleHulk.setGoodOrBad("Depends if you're on his good side");
+        theIncredibleHulk.setHeroName("The Incredible Hulk");
+        theIncredibleHulk.setSuperAbility("Being really strong and green");
+
+        System.out.println(theIncredibleHulk.toString());
+
+        theIncredibleHulk.setName("HULK SMASH");
+        theIncredibleHulk.setAge(35);
+        theIncredibleHulk.setGender("HULK SMASH");
+        theIncredibleHulk.setOccupation("HULK SMASH");
+        theIncredibleHulk.setAddress("HULK SMASH");
+        theIncredibleHulk.setGoodOrBad("HULK SMASH");
+        theIncredibleHulk.setHeroName("HULK SMASH");
+        theIncredibleHulk.setSuperAbility("HULK SMASH");
+
+        System.out.println(theIncredibleHulk.toString());
+
     }
 }
 
