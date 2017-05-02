@@ -4,10 +4,23 @@
 
 import java.util.*;
 
-public class RotateArray {
+public class RotateArray<E> extends ArrayList<E>{
+
+    void rotate(int k) {
+        E temp;
+        int n = this.size();
+
+        for(int j = 0; j < k; j++) {
+            for(int j1 = 0; j1 < n-1; j1++) {
+                temp = this.get(j1);
+                this.set(j1, this.get((j1-1+n)%n));
+                this.set((j1-1+n)%n, temp);
+            }
+        }
+    }
 
     public static void main(String[] args) {
-        List<Double> list = new ArrayList<Double>();
+        RotateArray<Double> list = new RotateArray<Double>();
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter an array size.");
@@ -22,19 +35,9 @@ public class RotateArray {
 
         System.out.println(list.toString());
 
-        double temp = 0;
-
-        for(int j = 0; j < k; j++) {
-            //System.out.println("Haaaay");
-            for(int j1 = 0; j1 < n-1; j1++) {
-                temp = list.get(j1);
-                list.set(j1, list.get((j1-1+n)%n));
-                list.set((j1-1+n)%n, temp);
-            }
-        }
+        list.rotate(k);
 
         System.out.println(list.toString());
-
     }
 
 }
