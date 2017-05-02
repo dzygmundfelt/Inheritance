@@ -1,4 +1,4 @@
-package Class.Manager.Test; /**
+package Class.Manager; /**
  * Created by danzygmund-felt on 5/1/17.
  */
 import Class.Manager.Inventory;

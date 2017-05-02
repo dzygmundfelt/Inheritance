@@ -5,8 +5,32 @@ package BankAccountManager;
  */
 public abstract class Account {
 
-    abstract double getBalance();
+    public double balance;
+    private int accountNumber;
+    private static int nextAccountNumber = 0;
 
-    abstract int getAccountNumber();
+    public Account() {
+        balance = 0.0;
+        accountNumber = nextAccountNumber;
+        nextAccountNumber++;
+    }
+
+    public Account(double balance) {
+        this.balance = balance;
+        accountNumber = nextAccountNumber;
+        nextAccountNumber++;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double adjustment) {
+        balance += adjustment;
+    }
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
 
 }

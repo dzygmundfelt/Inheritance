@@ -1,33 +1,18 @@
 package BankAccountManager;
 
-/**
- * Created by danzygmund-felt on 5/2/17.
- */
-public class CheckingAccount {
 
-    private double balance;
-    String accountNumber;
+public class CheckingAccount extends Account {
+
     private int PIN;
-    private static int nextID = 0;
 
-    public static void augmentNextID() {
-        nextID++;
+    CheckingAccount() {
+        super();
+        PIN = 1234;
     }
 
-    public static int getNextID() {
-        return nextID;
-    }
-
-    public double getBalance() {
-        return this.balance;
-    }
-
-    public void setBalance(double adjustment) {
-        this.balance += adjustment;
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
+    CheckingAccount(double balance) {
+        super(balance);
+        PIN = 1234;
     }
 
     public int getPIN() {

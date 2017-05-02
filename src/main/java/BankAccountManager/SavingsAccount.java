@@ -3,22 +3,17 @@ package BankAccountManager;
 /**
  * Created by danzygmund-felt on 5/2/17.
  */
-public class SavingsAccount {
-    private double balance;
-    String accountNumber;
+public class SavingsAccount extends Account {
     double rate;
 
-
-    double getBalance() {
-        return balance;
+    SavingsAccount() {
+        super();
+        rate = 0.1*Math.random();
     }
 
-    String getAccountNumber() {
-        return accountNumber;
-    }
-
-    void setBalance(double deposit) {
-        this.balance += deposit;
+    SavingsAccount(double balance) {
+        super(balance);
+        rate = 0.1*Math.random();
     }
 
     double getRate() {
@@ -26,4 +21,3 @@ public class SavingsAccount {
     }
 
 }
-
