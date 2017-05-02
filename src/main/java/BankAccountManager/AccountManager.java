@@ -7,10 +7,11 @@ public class AccountManager {
 
     public void createAccount(char type, double initialBalance) {
         if(type == 'C') {
-            CheckingAccount account = new CheckingAccount(initialBalance);
+            Account account = new CheckingAccount(initialBalance);
             accounts.add(account);
+            System.out.println("Hey there, I'm an account.");
         } else if(type == 'S') {
-            SavingsAccount account = new SavingsAccount();
+            Account account = new SavingsAccount();
             accounts.add(account);
         }
         //once business account is implemented, add here.
@@ -20,7 +21,12 @@ public class AccountManager {
         account.setPIN(PIN);
     }
 
-    public Account getAccount(String accountNumber) {
+    public Account getAccount(int accountNumber) {
+        for(Account account : accounts) {
+            if(account.getAccountNumber() == accountNumber) {
+                return account;
+            }
+        }
         return null;
     }
 
@@ -28,7 +34,7 @@ public class AccountManager {
         return account.getPIN() == PIN;
     }
 
-    public void setAccountBalance(double adjustment) {
-        return;
+    public void setAccountBalance(Account account, double adjustment) {
+        account.setBalance(adjustment);
     }
 }

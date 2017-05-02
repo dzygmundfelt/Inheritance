@@ -13,8 +13,11 @@ public class AccountManagerTest {
         //Given
         AccountManager manager = new AccountManager();
         manager.createAccount('C',300.0);
-        Account account = manager.getAccount("0");
-        manager.setPIN(account, 9876);
+        CheckingAccount account = null;
+        if(manager.getAccount(0) instanceof CheckingAccount) {
+            account = (CheckingAccount) manager.getAccount(0);
+            manager.setPIN(account, 9876);
+        }
         //When
         boolean result = manager.verifyPIN(account, 0123);
         //Then
@@ -25,13 +28,16 @@ public class AccountManagerTest {
     public void verifyPINPassTest() {
         //Given
         AccountManager manager = new AccountManager();
-        manager.createAccount('C',305.00);
-        manager.createAccount('C', 4000.00);
-        Account account = manager.getAccount("1");
-        manager.setPIN(account, 10101);
+        manager.createAccount('C',300.0);
+        CheckingAccount account = null;
+        if(manager.getAccount(0) instanceof CheckingAccount) {
+            account = (CheckingAccount) manager.getAccount(0);
+            manager.setPIN(account, 10101);
+        }
         //When
         boolean result = manager.verifyPIN(account, 10101);
         //Then
         Assert.assertTrue(result);
     }
+
 }
