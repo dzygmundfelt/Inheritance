@@ -1,4 +1,4 @@
-package Pets;
+package io.zipcoder.pets;
 
 import java.util.ArrayList;
 import java.util.Scanner;
