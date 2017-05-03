@@ -20,4 +20,8 @@ public class SavingsAccount extends Account {
         return rate;
     }
 
+    public String printAccountDetails() {
+        return "Type: Savings\nBalance: " + getBalance() + "\nRate: " + rate + "\n";
+    }
+
 }

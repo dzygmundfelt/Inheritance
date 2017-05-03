@@ -23,4 +23,8 @@ public class CheckingAccount extends Account {
         this.PIN = PIN;
     }
 
+    public String printAccountDetails() {
+        return "Type: Checking\nBalance: " + getBalance() + "\n";
+    }
+
 }

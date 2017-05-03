@@ -5,20 +5,24 @@ public class AccountManager {
 
     ArrayList<Account> accounts;
 
-    public void createAccount(char type, double initialBalance) {
-        if(type == 'C') {
-            Account account = new CheckingAccount(initialBalance);
-            accounts.add(account);
-            System.out.println("Hey there, I'm an account.");
-        } else if(type == 'S') {
-            Account account = new SavingsAccount();
-            accounts.add(account);
-        }
-        //once business account is implemented, add here.
+    AccountManager() {
+        accounts = new ArrayList<Account>();
     }
 
-    public void setPIN(CheckingAccount account, int PIN) {
-        account.setPIN(PIN);
+    public void createAccount(char type, double initialBalance) {
+        Account account = null;
+        if(type == 'C') {
+            account = new CheckingAccount(initialBalance);
+        } else if(type == 'S') {
+            account = new SavingsAccount(initialBalance);
+        } else if(type == 'B') {
+            account = new BusinessAccount(initialBalance);
+        }
+        accounts.add(account);
+    }
+
+    public boolean verifyPIN(CheckingAccount account, int PIN) {
+        return account.getPIN() == PIN;
     }
 
     public Account getAccount(int accountNumber) {
@@ -30,11 +34,20 @@ public class AccountManager {
         return null;
     }
 
-    public boolean verifyPIN(CheckingAccount account, int PIN) {
-        return account.getPIN() == PIN;
-    }
-
     public void setAccountBalance(Account account, double adjustment) {
         account.setBalance(adjustment);
     }
+
+    public static void main(String[] args) {
+        AccountManager manager = new AccountManager();
+        manager.createAccount('C',300.0);
+        manager.createAccount('C', 45.0);
+        manager.createAccount('C', 22.0);
+        manager.createAccount('S', 32323232.0);
+        for(int i = 0; i < 4; i++) {
+            Account a = manager.getAccount(i);
+            System.out.println(a + "Account number: " + a.getAccountNumber());
+        }
+    }
+
 }
