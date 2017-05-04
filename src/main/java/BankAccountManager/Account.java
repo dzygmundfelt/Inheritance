@@ -10,9 +10,7 @@ public abstract class Account {
     private static int nextAccountNumber = 0;
 
     public Account() {
-        balance = 0.0;
-        accountNumber = nextAccountNumber;
-        nextAccountNumber++;
+        this(0.0);
     }
 
     public Account(double balance) {

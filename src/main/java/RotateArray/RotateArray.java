@@ -1,6 +1,4 @@
-/**
- * Created by danzygmund-felt on 5/1/17.
- */
+package RotateArray;
 
 import java.util.*;
 

@@ -9,13 +9,13 @@ public class AccountManager {
         accounts = new ArrayList<Account>();
     }
 
-    public void createAccount(char type, double initialBalance) {
+    public void createAccount(String type, double initialBalance) {
         Account account = null;
-        if(type == 'C') {
+        if(type == "Credit") {
             account = new CheckingAccount(initialBalance);
-        } else if(type == 'S') {
+        } else if(type == "Savings") {
             account = new SavingsAccount(initialBalance);
-        } else if(type == 'B') {
+        } else if(type == "Business") {
             account = new BusinessAccount(initialBalance);
         }
         accounts.add(account);
@@ -40,10 +40,10 @@ public class AccountManager {
 
     public static void main(String[] args) {
         AccountManager manager = new AccountManager();
-        manager.createAccount('C',300.0);
-        manager.createAccount('C', 45.0);
-        manager.createAccount('C', 22.0);
-        manager.createAccount('S', 32323232.0);
+        manager.createAccount("Credit",300.0);
+        manager.createAccount("Credit", 45.0);
+        manager.createAccount("Credit", 22.0);
+        manager.createAccount("Savings", 32323232.0);
         for(int i = 0; i < 4; i++) {
             Account a = manager.getAccount(i);
             System.out.println(a + "Account number: " + a.getAccountNumber());

@@ -1,8 +1,5 @@
 package BankAccountManager;
 
-/**
- * Created by danzygmund-felt on 5/3/17.
- */
 public class Message {
 
     static String accountNumberRequest = "Please enter your account number.\n";
