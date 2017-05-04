@@ -26,17 +26,6 @@ public class PetTests {
     }
 
     @Test
-    public void roosterSpeakTest() {
-        //Given
-        Pet rooster = new Rooster();
-        String expected = "Rooster says Shut up, Rooster.";
-        //When
-        String actual = "Rooster says " + rooster.speak();
-        //Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
     public void goldishSpeakTest() {
         //Given
         Pet goldfish = new Goldfish();
@@ -46,4 +35,5 @@ public class PetTests {
         //Then
         Assert.assertEquals(expected, actual);
     }
+
 }
