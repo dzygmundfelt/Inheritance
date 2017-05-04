@@ -30,18 +30,24 @@ public class BasicPetApp {
         System.out.println("How many pets you got?");
         int numPets = Integer.parseInt(scanner.nextLine());
 
-        for (int i = 0; i < numPets; i++) {
-            System.out.println("What kind of pet is pet number " + (i+1) + "?");
-            Pet pet = petSelector(scanner.nextLine());
-            System.out.println("What's your pet's name?");
-            pet.name = scanner.nextLine();
-            petList.add(pet);
-        }
+        try {
 
-        System.out.println();
+            for (int i = 0; i < numPets; i++) {
+                System.out.println("What kind of pet is pet number " + (i + 1) + "?");
+                Pet pet = petSelector(scanner.nextLine());
+                System.out.println("What's your pet's name?");
+                pet.name = scanner.nextLine();
+                petList.add(pet);
+            }
 
-        for(Pet p : petList) {
-            System.out.println(p.getName() + " says " + p.speak() + "\n");
+            System.out.println();
+
+            for (Pet p : petList) {
+                System.out.println(p.getName() + " says " + p.speak() + "\n");
+            }
+
+        } catch (Exception e) {
+            System.out.println("That's not an acceptable pet. I'm done with you.");
         }
 
     }
